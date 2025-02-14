@@ -46,7 +46,7 @@ Ensure you have **Python 3.x** and `pip` installed.
 
 ### **1️⃣ Clone the Repository**
 ```bash
-$ git clone https://github.com/your-repository/todo-app.git
+$ git clone https://github.com/MasteriNeuron/Todo--Final.git
 $ cd todo-app
 ```
 
