@@ -66,7 +66,7 @@ JWT_SECRET_KEY=your_secret_key_here
 $ python app.py
 ```
 
-The app will be accessible at: **http://127.0.0.1:5000/** 🎉
+The app will be accessible at: **[https://donezo-c2n3.onrender.com/]** 🎉
 
 ---
 
@@ -94,7 +94,7 @@ The app will be accessible at: **http://127.0.0.1:5000/** 🎉
 
 ## ✉️ Contact & Support
 If you face any issues or have suggestions, feel free to **open an issue** or **contact us** at:
-📧 **email@example.com**
+📧 **shubhamchaudhary@pw.live**
 
 ---
 
