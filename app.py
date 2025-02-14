@@ -1,10 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
 import requests
 import json
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
-JWT_SECRET_KEY = "ID3z2UXcWBQ8q__U4q7UNUcHdkqIQoqTwoPDcyTdACk"
-app.secret_key = JWT_SECRET_KEY
+app.secret_key = os.getenv("JWT_SECRET_KEY")  # Load secret key from .env
 
 API_BASE_URL = "https://todo-list-project-z4fl.onrender.com/"
 
