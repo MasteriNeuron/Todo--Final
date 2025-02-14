@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <div class="task-box">
+            <h2>Task Details</h2>
+
+            <table class="task-table">
+                <tr>
+                    <th>Title</th>
+                    <td>{{ task['title'] }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ task['description'] }}</td>
+                </tr>
+                <tr>
+                    <th>Priority</th>
+                    <td>{{ task['priority'] }}</td>
+                </tr>
+                <tr>
+                    <th>Due Date</th>
+                    <td>{{ task['due_date'] }}</td>
+                </tr>
+                <tr>
+                    <th>Due Time</th>
+                    <td>{{ task['due_time'] }}</td>
+                </tr>
+            </table>
+
+            <a href="{{ url_for('dashboard') }}" class="btn btn-primary">Back to List</a>
+        </div>
+    </div>
+
+</body>
+</html>

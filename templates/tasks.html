@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - My Tasks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#" class="brand">
+                <img src="https://res.cloudinary.com/dqcvlj2il/image/upload/v1739429824/img_plvnzp.png" alt="Donezo Logo" class="logo">
+                Donezo
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="{{ url_for('logout') }}" class="btn-primary">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="task-heading">My Tasks</h1>
+    
+        <!-- Add New Task Form -->
+        <form method="POST" action="{{ url_for('add_task') }}" class="task-form">
+            <label for="title">Task Title</label>
+            <input type="text" name="title" id="title" placeholder="Enter task title" required>
+    
+            <label for="description">Task Description</label>
+            <textarea name="description" id="description" placeholder="Enter task details"></textarea>
+    
+            <label for="due_date">Due Date</label>
+            <input type="date" name="due_date" id="due_date" required>
+
+            <label for="due_time">Due Time</label>
+            <input type="time" name="due_time" id="due_time" required>
+    
+            <label for="priority">Priority</label>
+            <select name="priority" id="priority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+    
+            <button type="submit" class="btn-primary">Add Task</button>
+        </form>
+    </div>
+    
+<div class="task-container">
+    <ul class="task-list">
+        {% for task in tasks %}
+        <li class="task-item">
+            <div>
+                <strong>{{ task['title'] }}</strong>
+                <p>{{ task['description'] }}</p>
+                <span class="priority">Priority: {{ task['priority'] }}</span>
+                <br>
+                <span class="due-date">Due Date: {{ task['due_date'] }}</span>
+                <br>
+                <span class="due-time">Due Time: {{ task['due_time'] }}</span>
+            </div>
+            <div class="task-actions">
+                <form method="POST" action="{{ url_for('delete_task', task_id=task['id']) }}">
+                    <button type="submit" class="btn-danger">Delete</button>
+                </form>
+                <a href="{{ url_for('get_task', task_id=task['id']) }}" class="btn-info">View</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<script>
+    document.querySelector(".task-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent normal form submission
+
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const dueDate = document.getElementById("due_date").value;
+        let dueTime = document.getElementById("due_time").value;
+        const priority = document.getElementById("priority").value;
+
+        // Convert dueTime to "HH:MM:SS" format
+        dueTime = dueTime + ":00"; // Adds seconds to match API format
+
+        const taskData = {
+            "title": title,
+            "description": description,
+            "due_date": dueDate,
+            "due_time": dueTime,
+            "priority": priority
+        };
+
+        fetch("{{ url_for('add_task') }}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(taskData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                alert(data.message);
+                window.location.reload(); // Refresh page to show new task
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+</script>
+
+</body>
+</html>

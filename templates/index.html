@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donezo – Fun and Quick Way to Check Off Tasks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#" class="brand">
+                <img src="https://res.cloudinary.com/dqcvlj2il/image/upload/v1739429824/img_plvnzp.png" alt="Donezo Logo" class="logo">
+                Donezo
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}" class="btn btn-primary">Start for Free</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container">
+        <div class="hero-box">
+            <h1>Donezo – Fun and Quick Way to Check Off Tasks</h1>
+            <p>Make your to-do lists enjoyable and productive with the world's most engaging task manager.</p>
+            <a href="{{ url_for('register') }}" class="btn btn-primary">Start for Free</a>
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <h3>374K+ ★★★★★ reviews from</h3>
+        <div class="review-logos">
+            <span>💻 PC Mag</span>
+            <span>📱 TechRadar</span>
+            <span>📰 The Verge</span>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature">
+            <h2>Clear Your Mind</h2>
+            <p>Quickly capture and organize your tasks effortlessly.</p>
+        </div>
+        <div class="feature">
+            <h2>Stay Organized</h2>
+            <p>Keep track of your tasks in a fun and structured way.</p>
+        </div>
+        <div class="feature">
+            <h2>Plan with Ease</h2>
+            <p>Set due dates, reminders, and recurring tasks for efficiency.</p>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats">
+        <div class="stat">
+            <h3>30+ million</h3>
+            <p>App downloads</p>
+        </div>
+        <div class="stat">
+            <h3>2+ billion</h3>
+            <p>Tasks completed</p>
+        </div>
+        <div class="stat">
+            <h3>160+ countries</h3>
+            <p>Worldwide</p>
+        </div>
+        <div class="stat">
+            <h3>1+ million</h3>
+            <p>Pro users</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>Boost Your Productivity with Donezo</h2>
+        <p>Make task management effortless and enjoyable.</p>
+        <a href="{{ url_for('register') }}" class="btn btn-primary">Get Started for Free</a>
+    </section>
+
+    <footer>
+        <p>© 2025 Donezo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

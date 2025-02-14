@@ -1,0 +1,355 @@
+/* Apply the gradient background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: times new roman;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Center the login and register box */
+.auth-container {
+    width: 400px;
+    background: rgba(249, 247, 247, 0.15);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    text-align: center;
+}
+
+/* Form styling */
+.auth-box h2 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.input-group input {
+    width: 95%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+/* Navbar Left - Logo */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .brand {
+    font-size: 35px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar .brand .logo {
+    height: 80px; /* Increased logo size */
+    width: auto;
+    margin-right: 5px;
+}
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #ff7b00;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #e66a00;
+}
+
+/* Links */
+p a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .auth-container {
+        width: 90%;
+    }
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #010101;
+}
+
+/* Logout Button */
+.btn-primary {
+    background: #ff7b00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+.btn-primary:hover {
+    background: #e4e1de;
+}
+
+/* Task Form Styling */
+.container {
+    margin-top: 120px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(228, 225, 225, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+/* Form Inputs */
+.task-form input,
+.task-form select,
+.task-form textarea {
+    width: 95%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(14, 14, 11, 0.2);
+    color: #f4f4f4;
+}
+
+/* Task Description */
+.task-form textarea {
+    height: 180px;
+    resize: vertical;
+}
+
+/* Due Time Input */
+.task-form input[type="time"] {
+    width: 90%;
+}
+
+/* Add Task Button */
+.task-form button {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #ff7b00;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.task-form button:hover {
+    background: #e66a00;
+}
+
+/* Task List */
+.task-container {
+    position: absolute;
+    top: 100px;
+    right: 30px;
+    width: 320px;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Task Actions */
+.task-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Delete Button */
+.task-actions .btn-danger {
+    background: #d9534f;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.task-actions .btn-danger:hover {
+    background: #c9302c;
+}
+
+/* View Button */
+.task-actions .btn-info {
+    background: #5bc0de;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.task-actions .btn-info:hover {
+    background: #31b0d5;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .task-container {
+        position: static;
+        width: 100%;
+        margin-top: 0px;
+    }
+}
+/* Task Details Box */
+.task-box {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    text-align: center;
+}
+
+/* Task Details Table */
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.task-table th,
+.task-table td {
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+}
+
+.task-table th {
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+}
+
+/* Button Styling */
+.btn-primary {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: #ff7b00;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background: #e66a00;
+}

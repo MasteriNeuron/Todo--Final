@@ -1,0 +1,276 @@
+/* Apply the gradient background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4B79A1, #283E51);
+    color: white;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px; /* Reduced padding to prevent cutting */
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Prevents overflow */
+}
+
+/* Navbar Left - Logo */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .brand {
+    font-size: 35px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar .brand .logo {
+    height: 70px; /* Adjusted for better visibility */
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adds spacing between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #333;
+    transition: color 0.3s;
+    padding: 8px 15px; /* Adds padding for better clickability */
+}
+
+.nav-links a:hover {
+    color: #ff7b00;
+}
+
+/* Fixed "Start for Free" Button */
+.btn-primary {
+    background: #ff7b00;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    text-align: center;
+    min-width: 150px; /* Ensure proper button width */
+}
+
+.btn-primary:hover {
+    background: #e66a00;
+}
+
+/* Responsive Fix for Small Screens */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 15px 20px; /* Adjust padding */
+    }
+
+    .nav-links {
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    .btn-primary {
+        min-width: 140px;
+        font-size: 14px; /* Reduce font size slightly */
+        padding: 10px 20px;
+    }
+}
+
+/* Adjust page content so it doesn't hide under the fixed navbar */
+.container {
+    margin-top: 120px; /* Increased margin to fit larger navbar */
+    text-align: center;
+}
+
+/* Hero Section */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    text-align: center;
+}
+
+.hero-box {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.hero-box h1 {
+    font-size: 2.5rem;
+}
+
+.hero-box p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Reviews Section */
+.reviews {
+    text-align: center;
+    padding: 50px;
+}
+
+.review-logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 1.3rem;
+    flex-wrap: wrap;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.feature {
+    text-align: center;
+    width: 30%;
+    min-width: 280px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.stat {
+    min-width: 180px;
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 2rem;
+    color: #ff7b00;
+}
+
+/* Call-to-Action Section */
+.cta {
+    text-align: center;
+    padding: 50px;
+    background: #ff7b00;
+    color: white;
+}
+
+.cta .btn {
+    background: white;
+    color: #ff7b00;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #ff7b00;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #e66a00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .navbar .brand {
+        font-size: 28px;
+    }
+
+    .navbar .brand .logo {
+        height: 70px; /* Adjust for smaller screens */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-box {
+        width: 90%;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+}
